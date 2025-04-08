@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'rest_framework',  
     'khm_questions.apps.KhmQuestionsConfig',
+    'trainapp.apps.TrainappConfig',
 ]
 
 MIDDLEWARE = [
