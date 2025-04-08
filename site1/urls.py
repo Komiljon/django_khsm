@@ -3,6 +3,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include, re_path
 from khm_questions.views import KhmQuestionsViewSet, KhmQuestionsCrudViewSet, KhmCategoryViewSet, UserList, UserDetail
+from trainapp.views import TrainAppViewSet
 from .yasg import urlpatterns as doc_urls
 
 urlpatterns = [
@@ -19,6 +20,8 @@ urlpatterns = [
     path('api/v1/khm_catlist/', KhmCategoryViewSet.as_view({'get': 'list'})),
     path('api/v1/khm_catcreate/', KhmCategoryViewSet.as_view({'post': 'create'})),
     path('api/v1/khm_catupdate/<int:pk>/', KhmCategoryViewSet.as_view({'put': 'update'})),
+    
+    path('api/v1/raspisaniya/', TrainAppViewSet.as_view({'get': 'list'})),
 ]
 
 urlpatterns += doc_urls

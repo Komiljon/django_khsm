@@ -1,18 +1,6 @@
-from rest_framework import generics, viewsets
+from rest_framework import viewsets
 from trainapp.serializers import TrainAppSerializer, TrainAppCrudSerializer, TrainAppCatSerializer, UserSerializer
 from .models import TrainApp, TrainAppCategory
-from django.contrib.auth.models import User
-
-
-class UserList(generics.ListAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-
-
-class UserDetail(generics.RetrieveAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
- 
  
 class TrainAppViewSet(viewsets.ModelViewSet):
     queryset = TrainApp.objects.all()

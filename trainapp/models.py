@@ -14,13 +14,15 @@ class TrainAppCategory(models.Model):
 
 
 
-# Вопросы
+# станции
 class TrainApp(models.Model):
-    rasp = models.TextField(blank=True, verbose_name='Расписание', null=False)
+    rasp = models.TextField(blank=True, verbose_name='Название станции', null=False)
+    time_create = models.DateTimeField(auto_now_add=True, verbose_name='Время создания', db_index=True)
+    time_update = models.DateTimeField(auto_now=True, verbose_name='Время изменения', db_index=True)
     
     
     def __str__(self):
         return self.rasp    
     class Meta:
         verbose_name = "Расписание"
-        verbose_name_plural = "Расписании"
+        verbose_name_plural = "Расписания"
